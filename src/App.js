@@ -11,15 +11,12 @@ function App() {
         <ul>
           <li>
             <Link to="/">Home</Link>
-
           </li>
           <li>
             <Link to="/about">About</Link>
           </li>
         </ul>
-
         <hr />
-
         <Route exact path="/" component={Feed} />
         <Route path="/about" component={About} />
       </div>
@@ -31,27 +28,58 @@ class Feed extends React.Component{
 
   constructor(props){
     super(props)
-    this.state = {}
+    this.state = {
+      loadedData: false,
+      data: {}
+    }
   }
 
   componentDidMount(){
     fetch("https://pyn-terest.herokuapp.com/")
       .then(res => res.json())
       .then( (result) => {
-        this.setState(result);
+        this.setState( {
+          loadedData: true,
+          data: result
+        });
+        console.log('RESUUUUUUUULT',this.state)
+        console.log('RESUUUUUUUULT ONE:',this.state.data[0])
       })
       .catch( res => {
-        console.log('Error Message', res)
+        console.log('Error Message:', res)
       })
-
-    console.log('RESUUUUUUUULT',this.state)
   }
 
   render(){
+
+    let githubCards = "";
+    if (this.state.loadedData){
+      
+      return (
+        <div>
+          {
+            this.state.data[0].data.map( function(post, index){
+              console.log('POST!!!!!!!',post)
+              return <PypiCard data={post}/>    
+            })
+          }
+        </div>
+      )
+      
+    }
+
+    // { 
+    //   this.state[0].map( (post, index) => {
+    //     return <PypiCard postData={post} />    
+    //   })
+    // }
+
     return (
       <div>
         <h2>Home</h2>
-        <PypiCard />
+        
+        {/* <PypiCard /> */}
+        {githubCards}
       </div>
     );
   }
@@ -131,7 +159,10 @@ function Topics({ match }) {
   //    )
   // }
   // }
-function PypiCard (){
+
+
+  
+function PypiCard(props){
 
   let styles = {
     pypiCard: {
@@ -141,12 +172,10 @@ function PypiCard (){
 
   return (
     <div style={styles.pypiCard} >
-      <a href="https:/reddit.com" target="_blank">
-        <h1>Attack on Titan, or Attack on Distributed Denial of Service?</h1>
+      <a href={props.data.link} target="_blank">
+        <h1>{props.data.title}</h1>
         <p>Popular</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquam 
-          dolor in ligula maximus pellentesque. Donec est mi, luctus nec tellus 
-          pellentesque, mollis euismod diam. Curabitur commodo scelerisque malesuada.
+        <p>{props.data.desc}
         </p>
       </a>
     </div>
