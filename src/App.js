@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 
 import PypiCard from './components/Pypi'
-// import PypiCard from '/components/Pypi'
+
 function App() {
   return (
     <Router>
