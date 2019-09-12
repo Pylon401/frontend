@@ -23,7 +23,7 @@ function PypiCard(props){
           <p>{props.data.desc}</p>
         </div>
         <div className="card-footer">
-          <p>Popular</p>
+          <p>{props.data.category}</p>
           <img src={pythonIcon}></img>
         </div>
       </a>
