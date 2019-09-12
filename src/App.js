@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 
 import PypiCard from './components/Pypi'
+import GitHubCard from './components/GitHub'
 
 function App() {
   return (
@@ -65,12 +66,26 @@ class Feed extends React.Component{
 
     let githubCards = "";
     if (this.state.loadedData){
-      
       return (
         <div id="card-display">
           {
-            this.state.data[0].data.map( function(post, index){
+            this.state.data[6].data.map( function(post, index){
               return <PypiCard data={post}/>    
+            })
+          }
+          {
+            this.state.data[7].data.map( function(post, index){
+              return <PypiCard data={post}/>    
+            })
+          }
+          {
+            this.state.data[0].data.map( function(post, index){
+              return <GitHubCard data={post}/>    
+            })
+          }
+          {
+            this.state.data[1].data.map( function(post, index){
+              return <GitHubCard data={post}/>    
             })
           }
         </div>

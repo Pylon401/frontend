@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "./pypi_card.css"
 
-const pythonIcon = require("../../img/pythonIcon.png")
+const pythonIcon = require("../../img/pypi_logo.png")
 
 function PypiCard(props){
 
@@ -13,8 +13,8 @@ function PypiCard(props){
           <p>{props.data.desc}</p>
         </div>
         <div className="card-footer">
-          <p>Popular</p>
-          <img src={pythonIcon}></img>
+          <p>{props.data.category}</p>
+          <img src={pythonIcon} alt="PyPI logo"></img>
         </div>
       </a>
     </div>
