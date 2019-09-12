@@ -139,7 +139,7 @@ class Feed extends React.Component{
                 return <PypiCard data={post[0]}/>    
               }
               if (compare == 'github'){
-                return <div><h3> GITHUB </h3></div>
+                return <GitHubCard data={post[0]} />
               }
 
             })
