@@ -3,11 +3,9 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 
 import PypiCard from './components/Pypi'
-// import RedditCard from './components/Reddit' //DOES NOT EXIST YET
-// import GithubCard from './components/Github' //DOES NOT EXIST YET
 
+import GitHubCard from './components/GitHub'
 
-// import PypiCard from '/components/Pypi'
 function App() {
   return (
     <Router>
