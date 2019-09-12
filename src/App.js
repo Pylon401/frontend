@@ -52,6 +52,7 @@ class Feed extends React.Component{
             loadedData: true,
             data: result
           });
+          console.log("DATAAAAAAAAAAAAAAa",this.state.data)
         })
         .catch( res => {
           console.log('Error Message:', res)
