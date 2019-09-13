@@ -15,7 +15,7 @@ function RedditNoImg(props){
 
   return (
     <div className="card card-reddit" >
-      <a href={ props.data.link} target="_blank">
+      <a href={"https://www.reddit.com" + props.data.link} target="_blank">
         <div className='card-content'>
           <h1>{props.data.title}</h1>
           <p>{props.data.desc}</p>

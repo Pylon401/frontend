@@ -21,7 +21,7 @@ function RedditCard(props){
 
   return (
     <div className="card card-reddit-img" >
-      <a href={ props.data.link} target="_blank">
+      <a href={ "https://www.reddit.com" + props.data.link} target="_blank">
         <div className='card-content'>
           {content}
         </div>
