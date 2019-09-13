@@ -65,7 +65,7 @@ ul {
 #pynterestLogo {
   float: right;
   margin-top: 5px;
-  margin-right: 45px;
+  padding-right: 45px;
 }
 
 .left {  
@@ -83,15 +83,12 @@ ul {
   height: 40px;
 }
 
-.about {
-  font-size: 18px;
-}
-
 .title {
   display: block;
   position: relative;
   font-size: 32px;
   top: -10px;
+  margin-left: 20px;
 }
 
 .App-link {
@@ -104,6 +101,7 @@ ul {
   flex-wrap: wrap;
   background-color:#264272;
   margin-top: 50px;
+  margin-right: -4.5%;
 }
 
 .card {

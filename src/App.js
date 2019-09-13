@@ -92,21 +92,14 @@ class Feed extends React.Component {
           //Combine list data with category and source    
           //Push data into Big List
           this.createBigList(result);
-
         })
         .catch(res => {
           console.log('Error Message:', res)
         }
         )
     }
-
-
-
-
-
     //Render data on Big List
-
-  } //
+  }
 
   render() {
     if (this.state.loadedData) {
@@ -146,7 +139,6 @@ class Feed extends React.Component {
                   <Link to="/about" className="about">About</Link>
                 </li>
               </ul>
-              <Route path="/about" component={About} />
             </div>
           </Router>
         </>
