@@ -27,16 +27,6 @@ function App() {
   );
 }
 
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
-
-
-
 class Feed extends React.Component {
 
   constructor(props) {
@@ -89,9 +79,6 @@ class Feed extends React.Component {
       let randomArrayValue = list.splice(randomIndex, 1)
       randomizedList.push(randomArrayValue)
     }
-
-    console.log("RANDOMIZEDLIST", randomizedList)
-
     return randomizedList
 
   }
@@ -131,8 +118,6 @@ class Feed extends React.Component {
 
                 let compare = post[0].source;
                 let category = post[0].category;
-
-                console.log('CARD LOADED: ', compare);
 
                 if (compare === 'reddit' && (category === 'webdev' || category === 'programmerhumor')) {
                   return <RedditCard data={post[0]} />
