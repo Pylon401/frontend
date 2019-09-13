@@ -1,14 +1,14 @@
 import React from 'react';
 import "./reddit_card.css"
 
-const pythonIcon = require("../../img/python.png")
+const webDev = require("../../img/webdev.png")
 const programmerHumor = require("../../img/programmerhumor.png")
 
 function RedditCard(props){
   let icon;
   let content;
   if (props.data.category === 'webdev'){
-    icon = pythonIcon;
+    icon = webDev;
   } else if (props.data.category === 'programmerhumor'){
     icon = programmerHumor;
   }
