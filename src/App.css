@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Oleo+Script&display=swap');
+
+
 a:link {
   text-decoration: none;
   color: #037272;
@@ -34,18 +37,76 @@ a:hover{
   color: white;
 }
 
+ul {
+  margin: 0;
+}
+
+.nav {
+  background-image: linear-gradient(to right, #fe920f, #fffde8);
+  list-style-type: none;
+  margin-top: -50px;
+  padding-left: 0;   
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  /* padding-bottom: 50px; */
+  font-family: "Oleo Script", serif;
+  z-index: 1;  
+} 
+
+.footer {
+  background-image: linear-gradient(to right, #fe920f, #fffde8);
+  list-style-type: none;
+  height: 50px;
+  width: 100%;
+  font-family: "Oleo Script", serif;
+}
+
+#pynterestLogo {
+  float: right;
+  margin-top: 5px;
+  margin-right: 45px;
+}
+
+.left {  
+  float: left;
+  margin-right: 20px;
+  margin-top: 13px;
+  font-size: 20px;
+}
+
+.nav li a, .footer li a {
+  color: #2c2934;
+}
+
+.nav li img {
+  height: 40px;
+}
+
+.about {
+  font-size: 18px;
+}
+
+.title {
+  display: block;
+  position: relative;
+  font-size: 32px;
+  top: -10px;
+}
+
 .App-link {
   color: #ffc477;
 }
-
 
 #card-display {
   display: flex;
   flex-direction: row; 
   flex-wrap: wrap;
   background-color:#264272;
+  margin-top: 50px;
 }
 
 .card {
-  background-color:  #edebd9;
+  background-color:  #fffde8;
+  font-family: "Montserrat"
 }

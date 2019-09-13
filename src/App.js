@@ -7,21 +7,21 @@ import GitHubCard from './components/GitHub'
 import RedditCard from './components/RedditImage'
 import RedditNoImg from './components/RedditNoImage'
 
+const pynterestLogo = require("./img/pynterest_web_logo.png")
+
 function App() {
   return (
     <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
+        <ul className="nav">
+          <li className="left" id="home">
+            <Link to="/" className="title">Pynterest</Link>
           </li>
-          <li>
-            <Link to="/about">About</Link>
+          <li id="pynterestLogo">
+            <img src={pynterestLogo} alt="pynterest logo"></img>
           </li>
         </ul>
-        <hr />
         <Route exact path="/" component={Feed} />
-        <Route path="/about" component={About} />
       </div>
     </Router>
   );
@@ -37,9 +37,9 @@ function About() {
 
 
 
-class Feed extends React.Component{
+class Feed extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       loadedData: false,
@@ -49,17 +49,17 @@ class Feed extends React.Component{
   }
 
   //Create a large list of data for us to shuffle and render content upon.
-  createBigList(result){
+  createBigList(result) {
 
     let bigList = [];
     let randomizedList;
 
-    result.map( function(result, index){
-      let category = result.category 
+    result.map(function (result, index) {
+      let category = result.category
       let source = result.source
 
-      result.data.map( function(post){
-        
+      result.data.map(function (post) {
+
         let newPost = {
           source: source,
           category: category,
@@ -68,26 +68,26 @@ class Feed extends React.Component{
         bigList.push(newPost)
       })
     })
-    
+
     randomizedList = this.randomizeList(bigList)
 
-    this.setState( {
+    this.setState({
       loadedData: true,
       data: result,
       randomizedList: randomizedList
     });
   }
   //Shuffle Big List
-  randomizeList(list){
+  randomizeList(list) {
     let randomizedList = []
     function getRandomInt(max) {
       return Math.floor(Math.random() * Math.floor(max));
     }
 
-    while (list.length){
+    while (list.length) {
       let randomIndex = getRandomInt(list.length - 1)
-      let randomArrayValue = list.splice(randomIndex, 1) 
-      randomizedList.push( randomArrayValue )
+      let randomArrayValue = list.splice(randomIndex, 1)
+      randomizedList.push(randomArrayValue)
     }
 
     console.log("RANDOMIZEDLIST", randomizedList)
@@ -96,21 +96,21 @@ class Feed extends React.Component{
 
   }
 
-  componentDidMount(){
+  componentDidMount() {
     //Load all the data
-    if (!this.state.loadedData){
+    if (!this.state.loadedData) {
       fetch("https://pyn-terest.herokuapp.com/")
         .then(res => res.json())
-        .then( (result) => {
+        .then((result) => {
           //Combine list data with category and source    
           //Push data into Big List
           this.createBigList(result);
 
         })
-        .catch( res => {
+        .catch(res => {
           console.log('Error Message:', res)
         }
-      )
+        )
     }
 
 
@@ -118,41 +118,53 @@ class Feed extends React.Component{
 
 
     //Render data on Big List
-    
+
   } //
 
-  render(){
-    if (this.state.loadedData){
+  render() {
+    if (this.state.loadedData) {
       return (
-        <div id="card-display">
-          {
-            this.state.randomizedList.map( function(post, index){
+        <>
+          <div id="card-display">
+            {
+              this.state.randomizedList.map(function (post, index) {
 
-              let compare = post[0].source;
-              let category = post[0].category;
+                let compare = post[0].source;
+                let category = post[0].category;
 
-              console.log('CARD LOADED: ', compare);
+                console.log('CARD LOADED: ', compare);
 
-              if (compare == 'reddit' && (category == 'webdev' || category == 'programmerhumor')){
-                  return <RedditCard data={post[0]}/> 
-              }
+                if (compare === 'reddit' && (category === 'webdev' || category === 'programmerhumor')) {
+                  return <RedditCard data={post[0]} />
+                }
 
-              if (compare == 'reddit' && (category == 'python' || category == 'learnprogramming')) {
-                return <RedditNoImg data={post[0]}/>
-              }
-              
-              if (compare == 'pypi'){
-                return <PypiCard data={post[0]}/>    
-              }
-              if (compare == 'github'){
-                return <GitHubCard data={post[0]} />
-              }
+                if (compare === 'reddit' && (category === 'python' || category === 'learnprogramming')) {
+                  return <RedditNoImg data={post[0]} />
+                }
 
-            })
+                if (compare === 'pypi') {
+                  return <PypiCard data={post[0]} />
+                }
+                if (compare === 'github') {
+                  return <GitHubCard data={post[0]} />
+                }
 
-        }
+              })
 
-        </div>
+            }
+
+          </div>
+          <Router>
+            <div>
+              <ul className="footer">
+                <li className="left">
+                  <Link to="/about" className="about">About</Link>
+                </li>
+              </ul>
+              <Route path="/about" component={About} />
+            </div>
+          </Router>
+        </>
       )
     }
 
