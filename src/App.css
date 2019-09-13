@@ -32,4 +32,9 @@ a:link {
   display: flex;
   flex-direction: row; 
   flex-wrap: wrap;
+  background-color: rgba(40, 63, 121, 0.926)
+}
+
+.card {
+  background-color:rgba(153, 171, 216, 0.329)
 }

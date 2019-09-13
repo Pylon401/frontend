@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 
 import PypiCard from './components/Pypi'
-
 import GitHubCard from './components/GitHub'
+import RedditCard from './components/RedditImage'
 
 function App() {
   return (
@@ -128,11 +128,12 @@ class Feed extends React.Component{
             this.state.randomizedList.map( function(post, index){
 
               let compare = post[0].source;
+              let category = post[0].category;
 
               console.log('CARD LOADED: ', compare);
 
-              if (compare == 'reddit'){
-                  return <div><h3> REDDIT </h3></div> 
+              if (compare == 'reddit' && (category == 'webdev' || category == 'programmerhumor')){
+                  return <RedditCard data={post[0]}/> 
               }
               
               if (compare == 'pypi'){
