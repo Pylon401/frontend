@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 
 import PypiCard from './components/Pypi'
+import About from './components/About'
 
 import GitHubCard from './components/GitHub'
 
@@ -25,16 +26,6 @@ function App() {
     </Router>
   );
 }
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
-
-
 
 class Feed extends React.Component{
 
