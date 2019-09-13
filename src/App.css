@@ -1,6 +1,16 @@
 a:link {
   text-decoration: none;
-  color: rgb(0, 98, 203);
+  color: #037272;
+}
+
+a:visited{
+  text-decoration: none;
+  color: #037272;
+}
+
+a:hover{
+  text-decoration: none;
+  color: #4476ce;
 }
 
 .App {
@@ -33,9 +43,9 @@ a:link {
   display: flex;
   flex-direction: row; 
   flex-wrap: wrap;
-  background-color: #3BD80D;
+  background-color:#264272;
 }
 
 .card {
-  background-color: rgb(217, 254, 206);
+  background-color:  #edebd9;
 }

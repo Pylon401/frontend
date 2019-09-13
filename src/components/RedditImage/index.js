@@ -15,11 +15,13 @@ function RedditCard(props){
 
   if (props.data.image) {
     content = <img src={props.data.image} className="redditCardImage"/>
+  } else {
+    content = <><h1>{props.data.title}</h1><p>{props.data.desc}</p></>
   }
 
   return (
-    <div className="card card-reddit" >
-      <a href={ props.data.link} target="_blank">
+    <div className="card card-reddit-img" >
+      <a href={ "https://www.reddit.com" + props.data.link} target="_blank">
         <div className='card-content'>
           {content}
         </div>
