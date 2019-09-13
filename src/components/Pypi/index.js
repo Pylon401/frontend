@@ -1,32 +1,24 @@
-import React, { Component } from './node_modules/react';
+import React, { Component } from 'react';
+import "./pypi_card.css"
 
-class PypiCard extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      source: "Pypi",
-      category: props.category, 
-      title: props.title,
-      description: props.description,
-      url: props.url
-    }
-  }
+const pythonIcon = require("../../img/pypi_logo.png")
 
-  render() {
-    return (
-      <div>
-        <a href={this.state.url}>
-          <h1>{this.state.title}</h1>
-          <p>{this.state.category}</p>
-          <p>{this.state.description}</p>
-        </a>
-      </div>
-     )
-  }
+function PypiCard(props){
 
+  return (
+    <div className="card card-pypi" >
+      <a href={props.data.link} target="_blank">
+        <div className='card-content'>
+          <h1>{props.data.title}</h1>
+          <p>{props.data.desc}</p>
+        </div>
+        <div className="card-footer">
+          <p>{props.data.category}</p>
+          <img src={pythonIcon} alt={props.data.category} title={props.data.category}></img>
+        </div>
+      </a>
+    </div>
+   )
 }
-
-
-
 
 export default PypiCard

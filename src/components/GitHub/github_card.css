@@ -1,0 +1,50 @@
+.card-github {
+    position: relative;
+    border: 1px solid grey;
+    border-radius: 15px;
+    margin: 1%;
+    padding: 5px 10px;
+    width: 28%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  
+  /* CARD CONTENT */
+  .card-content {
+    text-overflow: ellipsis;
+    height: 250px;
+    word-break: break-word;
+  }
+  
+  .card-content h1 {
+    font-size: 24px;
+  }
+  
+  .card-content p {
+    color: black; 
+  }
+  
+  .card-github .card-footer{
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 95%;
+  }
+  
+  .card-github .card-footer p {
+    background-color: #ff7417;
+    float: left;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 2px 12px;
+    width: auto;
+  }
+
+  .card-github .card-footer img {
+    float: right;
+    right: -15px;
+    width: 35px;
+    height: 35px;
+  }
