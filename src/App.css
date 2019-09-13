@@ -1,5 +1,6 @@
 a:link {
   text-decoration: none;
+  color: rgb(0, 98, 203);
 }
 
 .App {
@@ -24,7 +25,7 @@ a:link {
 }
 
 .App-link {
-  color: #61dafb;
+  color: #ffc477;
 }
 
 
@@ -32,9 +33,9 @@ a:link {
   display: flex;
   flex-direction: row; 
   flex-wrap: wrap;
-  background-color: rgba(40, 63, 121, 0.926)
+  background-color: #3BD80D;
 }
 
 .card {
-  background-color:rgba(153, 171, 216, 0.329)
+  background-color: rgb(217, 254, 206);
 }
