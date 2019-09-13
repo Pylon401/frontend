@@ -14,7 +14,7 @@ function PypiCard(props){
         </div>
         <div className="card-footer">
           <p>{props.data.category}</p>
-          <img src={pythonIcon} alt="PyPI logo"></img>
+          <img src={pythonIcon} alt={props.data.category} title={props.data.category}></img>
         </div>
       </a>
     </div>
