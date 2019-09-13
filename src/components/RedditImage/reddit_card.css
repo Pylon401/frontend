@@ -1,0 +1,56 @@
+.card-reddit {
+    position: relative;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: 1%;
+    padding: 5px 10px;
+    width: 28%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* CARD CONTENT */
+.card-content {
+    text-overflow: ellipsis;
+    height: 250px;
+    word-break: break-word;
+}
+
+.card-content h1 {
+    font-size: 24px;
+}
+
+.card-content p {
+    color: black;
+}
+
+.card-reddit .card-footer {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 95%;
+}
+
+.card-reddit .card-footer p {
+    background-color: #3BD80D;
+    float: left;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 2px 12px;
+    width: auto;
+}
+
+.card-reddit .card-footer img {
+    float: right;
+    right: -15px;
+    width: 35px;
+    height: 35px;
+}
+
+.redditCardImage {
+    height: 100%;
+    margin: auto;
+    display: block;
+}

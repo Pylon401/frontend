@@ -13,7 +13,7 @@ function GitHubCard(props){
           <p>{props.data.desc}</p>
         </div>
         <div className="card-footer">
-          <p className="stars">{props.data.stars} Stars</p>
+          <p className="stars">{props.data.stars} stars</p>
           <p className="category">{props.data.category}</p>
           <img src={gitHubIcon} alt="GitHub logo"></img>
         </div>
