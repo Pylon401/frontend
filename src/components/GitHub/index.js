@@ -14,8 +14,7 @@ function GitHubCard(props){
         </div>
         <div className="card-footer">
           <p className="stars">{props.data.stars} stars</p>
-          <p className="category">{props.data.category}</p>
-          <img src={gitHubIcon} alt="GitHub logo"></img>
+          <img src={gitHubIcon} alt={props.data.category} title={props.data.category}></img>
         </div>
       </a>
     </div>

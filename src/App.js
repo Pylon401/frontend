@@ -5,6 +5,7 @@ import './App.css';
 import PypiCard from './components/Pypi'
 import GitHubCard from './components/GitHub'
 import RedditCard from './components/RedditImage'
+import RedditNoImg from './components/RedditNoImage'
 
 function App() {
   return (
@@ -134,6 +135,10 @@ class Feed extends React.Component{
 
               if (compare == 'reddit' && (category == 'webdev' || category == 'programmerhumor')){
                   return <RedditCard data={post[0]}/> 
+              }
+
+              if (compare == 'reddit' && (category == 'python' || category == 'learnprogramming')) {
+                return <RedditNoImg data={post[0]}/>
               }
               
               if (compare == 'pypi'){
