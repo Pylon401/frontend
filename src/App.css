@@ -41,17 +41,26 @@ ul {
   margin: 0;
 }
 
-#nav {
+.nav {
   background-image: linear-gradient(to right, #fe920f, #fffde8);
   list-style-type: none;
-  margin-top: -50px;   
+  margin-top: -50px;
+  padding-left: 0;   
   height: 50px;
   position: fixed;
   width: 100%;
   /* padding-bottom: 50px; */
-  font-family: "Oleo Script";
+  font-family: "Oleo Script", serif;
   z-index: 1;  
-}  
+} 
+
+.footer {
+  background-image: linear-gradient(to right, #fe920f, #fffde8);
+  list-style-type: none;
+  height: 50px;
+  width: 100%;
+  font-family: "Oleo Script", serif;
+}
 
 #pynterestLogo {
   float: right;
@@ -66,20 +75,23 @@ ul {
   font-size: 20px;
 }
 
-#nav li a {
+.nav li a, .footer li a {
   color: #2c2934;
 }
 
-#nav li img {
+.nav li img {
   height: 40px;
 }
 
 .about {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .title {
-  font-size: 24px;
+  display: block;
+  position: relative;
+  font-size: 32px;
+  top: -10px;
 }
 
 .App-link {
