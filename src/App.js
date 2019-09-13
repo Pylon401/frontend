@@ -7,19 +7,23 @@ import GitHubCard from './components/GitHub'
 import RedditCard from './components/RedditImage'
 import RedditNoImg from './components/RedditNoImage'
 
+const pynterestLogo = require("./img/pynterest_web_logo.png")
+
 function App() {
   return (
     <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
+        <ul id="nav">
+          <li className="left" id="home">
+            <Link to="/">Pynterest</Link>
           </li>
-          <li>
+          <li className="left">
             <Link to="/about">About</Link>
           </li>
+          <li id="pynterestLogo">
+            <img src={pynterestLogo} alt="pynterest logo"></img>
+          </li>
         </ul>
-        <hr />
         <Route exact path="/" component={Feed} />
         <Route path="/about" component={About} />
       </div>

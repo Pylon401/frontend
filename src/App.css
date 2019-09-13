@@ -34,10 +34,38 @@ a:hover{
   color: white;
 }
 
+#nav {
+  background-image: linear-gradient(to right, #fe920f, #fffde8);
+  list-style-type:none;  
+  margin:0;  
+  padding-bottom: 50px;
+  font-family: sans-serif;  
+}  
+
+#pynterestLogo {
+  float: right;
+  margin-top: 5px;
+  margin-right: 45px;
+}
+
+.left {  
+  float: left;
+  margin-right: 20px;
+  margin-top: 13px;
+  font-size: 20px;
+}
+
+#nav li a {
+  color: #2c2934;
+}
+
+#nav li img {
+  height: 40px;
+}
+
 .App-link {
   color: #ffc477;
 }
-
 
 #card-display {
   display: flex;
@@ -47,5 +75,5 @@ a:hover{
 }
 
 .card {
-  background-color:  #edebd9;
+  background-color:  #fffde8;
 }
