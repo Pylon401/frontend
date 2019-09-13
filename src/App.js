@@ -15,10 +15,10 @@ function App() {
       <div>
         <ul id="nav">
           <li className="left" id="home">
-            <Link to="/">Pynterest</Link>
+            <Link to="/" className="title">Pynterest</Link>
           </li>
           <li className="left">
-            <Link to="/about">About</Link>
+            <Link to="/about" className="about">About</Link>
           </li>
           <li id="pynterestLogo">
             <img src={pynterestLogo} alt="pynterest logo"></img>
@@ -137,18 +137,18 @@ class Feed extends React.Component{
 
               console.log('CARD LOADED: ', compare);
 
-              if (compare == 'reddit' && (category == 'webdev' || category == 'programmerhumor')){
+              if (compare === 'reddit' && (category === 'webdev' || category === 'programmerhumor')){
                   return <RedditCard data={post[0]}/> 
               }
 
-              if (compare == 'reddit' && (category == 'python' || category == 'learnprogramming')) {
+              if (compare === 'reddit' && (category === 'python' || category === 'learnprogramming')) {
                 return <RedditNoImg data={post[0]}/>
               }
               
-              if (compare == 'pypi'){
+              if (compare === 'pypi'){
                 return <PypiCard data={post[0]}/>    
               }
-              if (compare == 'github'){
+              if (compare === 'github'){
                 return <GitHubCard data={post[0]} />
               }
 
