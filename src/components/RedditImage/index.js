@@ -22,8 +22,6 @@ function RedditCard(props){
       <a href={ props.data.link} target="_blank">
         <div className='card-content'>
           {content}
-          <h1>{props.data.title}</h1>
-          <p>{props.data.desc}</p>
         </div>
         <div className="card-footer">
           <p className="ups">{props.data.ups} upvotes</p>
